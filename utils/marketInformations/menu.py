@@ -1,9 +1,12 @@
 import curses
+import curses.panel
 
-class Menu():
+class marketMenu():
     def __init__(self):
         ...
+    
+
 
 
 if __name__ == "__main__":
-    Menu()
+    marketMenu()

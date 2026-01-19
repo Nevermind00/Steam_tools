@@ -17,7 +17,9 @@ from utils.profileInformations import profile_
 from utils.profileInformations.menu_ import ProfileMenu
 
 from utils.profileInformations import friends_
-from utils.storeInformations import wishlist_
+from utils.storeInformations.menu import WishlistMenu
+
+
 
 
 class SPC():
@@ -26,9 +28,9 @@ class SPC():
         #Запуск главного меню
         curses.wrapper(self.main_menu)
 
-#-----------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------
 #                                           MAIN MENU
-#-----------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------
     def menu(self, stdscr):
         #Откючить курсор
         curses.curs_set(0)
@@ -37,10 +39,11 @@ class SPC():
         #Пункты меню
         self.menu_items = [
         "Profile Information",
-        "Store Information",
-        "Market Information",
+        "Store",
+        "Market",
         "Settings", 
         "Exit"]
+
 
         current_item = 0
 
@@ -106,13 +109,13 @@ class SPC():
         #Если выбран пункт Profile Information, то запускать меню информации о профиле
         if self.choice == 0:
             stdscr.clear()
-            # stdscr.addstr(10, 10, "profile")
             self.ProfileMenu = ProfileMenu()
         
-        #Если выбран пункт Store Information6 то запускать меню информации о профиле
+        #Если выбран пункт Store Information, то запускать меню информации о профиле
         if self.choice == 1:
             stdscr.clear()
-            stdscr.addstr(10, 10, "Store Information")
+            # stdscr.addstr(10, 10, "Store Information")
+            self.wmenu = WishlistMenu()
 
         #Если выбрать пункт Market Information, то запускать меню информации о маркете
         if self.choice == 2:
@@ -134,8 +137,8 @@ class SPC():
         stdscr.getch()
     
 
-    def wishlist_store(self):
-         self.wishlist_menu = wishlist_.wishlist()
+    # def wishlist_store(self):
+    #      self.wishlist_menu = wishlist_.wishlist()
 
         
 if __name__ == "__main__":

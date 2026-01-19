@@ -1,56 +1,26 @@
-#Список желаемых игр или програм
+import sqlite3 
 
-# import requests
-# import json
-# from rich import print
-
-from .wishlistGameInfo import GameInfo
-
-
-class wishlist():
+class Wishlist:
     def __init__(self):
+        ...
+    
+    def wishilst_database(self):
+        # Создание базы данных
+        wishlist_db = sqlite3.connect("wishlist.db")
 
-        # with open("./source/wishlist.json", "r+") as wishlist_file:
-        #     wishlist_ = json.load(wishlist_file)
-        
-        #При выборе wishlist в основном файле, должен выводиться список все желаемых или отслеживаемых игр. И после попадания в wishlist должно быть управление на списком желаемого(просмотр, удаление, добавление, актуальная информаци цен итд).
+        cursor = wishlist_db.cursor()
 
+        # Создание таблицы wishlist 
+        cursor.execute("""
+        CREATE TABLE wishlist(
+                    appID integer NOT NULL,
+                    name text NOT NULL,
+                    type text NOT NULL,
+                    price integer NOT NULL             
+        )""")
 
+        wishlist_db.commit()
+        wishlist_db.close()
+    
+    
 
-        self.wishlist_menu = input("wishlist > ").strip().lower()
-
-        while True:
-            match self.wishlist_menu:
-                
-                #Список желаемого
-                case "list":
-                    print("list")
-                    wishlist()
-
-                #Добавить в список желаемого 
-                case "add":
-                    print('add')
-                    wishlist()
-
-                #Удалить из списка желаемого
-                case "remove":
-                    print("remove")
-                    wishlist()
-                
-                #информация о игре
-                case "info":
-                    GameInfo()
-                    wishlist()
-
-                #Выход из wishlis_
-                case "menu":
-                    break
-
-                case _:
-                    print("Unknow command")
-                    wishlist()
-            wishlist()
-
-
-if __name__ == "__main__":
-    wishlist()

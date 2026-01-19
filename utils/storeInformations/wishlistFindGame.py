@@ -8,7 +8,7 @@ import asyncio
 
 from utils.storeInformations import wishlist_
 
-class GameInfo():
+class GameInfo:
     def __init__(self):
         
         #Рандомый юзер агент, чтобы при поступление большого количества запросов, steam не банил ip.
@@ -101,3 +101,6 @@ class GameInfo():
                     return self.game["appid"]
         except:
             print("Game is not found... =(")
+
+if __name__ == "__main__":
+    run = GameInfo()
