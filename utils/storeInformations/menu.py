@@ -12,9 +12,8 @@ class WishlistMenu:
 
         #Пункты меню 
         self.menu_items = [
+            "Find Game"
             "Wishlist",
-            "Add the game to your wishlist",
-            "Remove the game to your wishlist",
             "Sales",
             "Main menu",
             "Exit"]

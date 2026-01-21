@@ -16,7 +16,6 @@ from utils.profileInformations import *
 from utils.profileInformations import profile_
 from utils.profileInformations.menu_ import ProfileMenu
 
-from utils.profileInformations import friends_
 from utils.storeInformations.menu import WishlistMenu
 
 
