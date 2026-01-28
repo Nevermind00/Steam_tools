@@ -1,6 +1,8 @@
 import curses
 import curses.panel
 
+from .wishlistFindGame import GameInfo
+
 class WishlistMenu:
     def __init__(self):
         curses.wrapper(self.Whishlist_menu)
@@ -12,7 +14,7 @@ class WishlistMenu:
 
         #Пункты меню 
         self.menu_items = [
-            "Find Game"
+            "Find Game",
             "Wishlist",
             "Sales",
             "Main menu",
@@ -75,22 +77,22 @@ class WishlistMenu:
         #Если выбран пункт Wishlist то запускать меню с вашим списком желаемого 
         if self.choice == 0:
             stdscr.clear()
-            stdscr.addstr(10, 10, "Wishlist")
+            self.findGame = GameInfo()
         
         #Если выбран пункт Add the game to your wishlist, то запускать меню с добавлением игры в список желаемого 
         if self.choice == 1: 
             stdscr.clear()
-            stdscr.addstr(10, 10, "Add the game to your wishlist")
+
 
         #Если выбран пункт Remove the game to your wishlist, то запускать меню с удалением игры из списка желаемого
         if self.choice == 2:
             stdscr.clear()
-            stdscr.addstr(10, 10, "Remove the game to your wishlist")
+            # stdscr.addstr(10, 10, "Remove the game to your wishlist")
         
         # Если выбран пункт Sales, то запускеать меню со списком игр на которые сейчас скидка
         if self.choice == 3:
             stdscr.clear()
-            stdscr.addstr(10, 10, "Sales")
+            # stdscr.addstr(10, 10, "Sales")
         
         if self.choice == 4: 
             stdscr.clear()
@@ -103,6 +105,80 @@ class WishlistMenu:
         
         stdscr.refresh()
         stdscr.getch()
+    
+    def find_game_information(self, stdscr, y, x, prompt, length):
+        curses.curs_set(1)
+        height, width = stdscr.getmaxyx()
+        
+        win_heigh = min(10, height - 4)
+        win_width = min(50, width - 4)
+        start_x = max(0, (width-19 - win_heigh) // 2)
+        start_y = max(0, (height - win_heigh) // 2)
+
+        find_game_menu = curses.newwin(win_heigh, win_width+19, start_y, start_x)
+        find_game_menu.keypad(True)
+
+        find_game_menu.border()
+        title = "Game name or appID"
+        find_game_menu.addstr(1, (win_width+19 - len(title)) // 2, title, curses.A_BOLD)
+        find_game_menu.addstr(y, x, prompt)
+        find_game_menu.refresh()
+
+        curses.echo()
+        try:
+            find_game_input = find_game_menu.getstr(4, x + len(prompt), length).decode("utf-8")
+        except curses.error:
+            find_game_input = ""
+        finally:
+            curses.noecho()
+            curses.curs_set(0)
+
+        find_game_menu.clear()
+        find_game_menu.refresh()
+
+        return find_game_input.strip()
+    def FindGameInput(self, stdscr):
+        return self.find_game_information(stdscr, 4, 2, "Game:", 60)
+
+    def FindGameMenu(self, stdscr):
+        curses.curs_set(0)
+        stdscr.clear()
+
+        heigh, width = stdscr.getmaxyx()
+        win_heigh = min(140, heigh -1)
+        win_width = min(140, width -4 )
+        start_x = max(0, (width-19 - win_width) // 2)
+        start_y = max(0, (heigh - win_heigh) // 2)
+
+        find_game_menu = curses.newwin(heigh-2, width, start_y, start_x)
+        find_game_menu.keypad(True)
+
+        while True:
+            find_game_menu.clear()
+            find_game_menu.border()
+
+            GameName = self.FindGameInput(stdscr)
+
+            if not GameName:
+                continue
+            try:
+                game_info = GameInfo()
+
+                # game_info.
+                # 22.01.26 доделать меню с выводом информации о игре, а после задавать вопрос, добавлять ли игру в список желаемого или нет. 
+
+                
+            except Exception as e:
+                print(f"Error: {e}")
+                
+            find_game_menu.refresh()
+
+            key = find_game_menu.getch()
+
+            if key == curses.KEY_F10:
+                quit()
+    
+
 
 if __name__ == "__main__":
-    ...
+    WishlistMenu()

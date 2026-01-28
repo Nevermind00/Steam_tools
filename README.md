@@ -7,3 +7,18 @@
 # What is it? 
 > __SPC__ - Steam Profile Checker, a tool that will help you get complete information about Steam profile, view the account cost, and view the cost of items in inventory, and much more.
 
+---
+## How to use:
+
+### Profile Information
+Select the appropriate menu item. A window will appear asking you to enter a link to the profile. Press Enter. That's it, the program will display the full profile information.
+  
+- full profile information 
+- list of the best games
+- Faciet information 
+- great time spent playing games 
+- inventory cost 
+- account price account
+- registration date
+
+### Wishlist

@@ -5,7 +5,9 @@ from .profileInformations.friends_ import Friends
 from .profileInformations.menu_ import ProfileMenu
 #Модули магазина 
 from .storeInformations.menu import WishlistMenu
+from .storeInformations.wishlistFindGame import GameInfo
+from .storeInformations.wishlist_ import Wishlist
 #Модули торговой площадки
 # from .marketInformations.menu_ import Menu
 
-__all__ = ["Profile__", "Awards__", "ProfileMenu", "Friends", "WishlistMenu"]
+__all__ = ["Profile__", "ProfileMenu", "Friends", "Wishlist", "GameInfo", "WishlistMenu"]

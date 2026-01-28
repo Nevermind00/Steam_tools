@@ -46,8 +46,6 @@ class ProfileMenu:
             curses.noecho()
             curses.curs_set(0)
         
-
-        # 23.12.25 починен баг, из-за которого не пропадала меню ввода ссылки
         profile_menu.clear()
         profile_menu.refresh()
         
@@ -73,17 +71,11 @@ class ProfileMenu:
         # Главное окно
         main_info_menu = curses.newwin(height-2, width, start_y, start_x)
         main_info_menu.keypad(True)
-
-        # # Окно наград
-        # awards_info_menu = curses.newwin(height, 60, 0, 70)
-        # awards_info_menu.keypad(True)
         
         while True:
 
             main_info_menu.clear()
             main_info_menu.border()
-            # awards_info_menu.clear()
-            # awards_info_menu.border()
             
             # Получение ссылки на профиль
             ProfileLink = self.ProfileInput(stdscr)
@@ -96,76 +88,49 @@ class ProfileMenu:
                 awards_info = Profile_Awards()
                 # friends_info = Friends()
                 
-                #main page
-                profile_info.Profile(ProfileLink)
-                #awards page
-                awards_info.Profile(f"{ProfileLink}/awards/")
-                #friends page
+                
+                profile_info.Profile(ProfileLink)                   #main page
+                awards_info.Profile(f"{ProfileLink}/awards/")       #awards page
 
             # PROFILE INTFORMATION
-                # Получение никнейма
-                get_nickname_ = profile_info.get_nickname()
-                # Получение уровная аккаунта
-                # get_lvl_ = profile_info.get_lvl_account()
-                # Получение статуса(Online/Offline)
-                get_status_ = profile_info.get_status()
-                # Получение страны, указанную в профиле 
-                get_country_ = profile_info.get_country()
-                # Получение приватности профиля(Открытй/Закрытый)
-                get_profile_type_ = profile_info.get_profile_type()
+                get_nickname_ = profile_info.get_nickname()         # Получение никнейма
+                # get_lvl_ = profile_info.get_lvl_account()         # Получение уровная аккаунта
+                get_status_ = profile_info.get_status()             # Получение статуса(Online/Offline)
+                get_country_ = profile_info.get_country()           # Получение страны, указанную в профиле 
+                get_profile_type_ = profile_info.get_profile_type() # Получение приватности профиля(Открытй/Закрытый)
 
-                # Получение информации о банах
-                # Получение информации о vac бане
-                get_vac_ban_ = profile_info.get_vac_ban_information()
-                # Получение информации о community бане
-                get_community_ban_ = profile_info.get_community_ban_information()
-                # Получение информации о trade бане
-                get_trade_ban_ = profile_info.get_trade_ban_information()
+            # BAN INFORMATION
+                get_vac_ban_ = profile_info.get_vac_ban_information()             # Получение информации о vac бане
+                get_community_ban_ = profile_info.get_community_ban_information() # Получение информации о community бане
+                get_trade_ban_ = profile_info.get_trade_ban_information()         # Получение информации о trade бане
 
             # AWARDS INFORMATION
-                # Получение информации о полученных нагарадах
-                get_awards_received = awards_info.Get_Awards_Received()
-                # Получение информации о выданных наградах
-                get_awards_given    = awards_info.Get_Awards_Given()
-
-                
-                # Отображение главной информации о профиле
+                get_awards_received = awards_info.Get_Awards_Received()           # Полученные награды
+                get_awards_given    = awards_info.Get_Awards_Given()              # Выданные награды 
             
             # FRIENDS INFORMATION 
-            # Количество друзей
 
             
                 """ 13.01.26
                 сделать цикличный пеернос строки, если добавится новый элемент, чтобы не пришлось все координаты переприсывать в ручную.
                 """
 
-                # Вывод никекйма
-                nickname_out = main_info_menu.addstr(1, 2, f"Nickname: {get_nickname_}")
-                url_out = main_info_menu.addstr(2, 2, f"Link: {ProfileLink}")
-                # вывод информации о приватности профиля 
-                profile_type_out = main_info_menu.addstr(3, 2, f"Profile Type: {get_profile_type_}")
-                # Вывод уровня аккаунта
-                lvl_out = main_info_menu.addstr(4, 2, f"Level: ") 
-                status_out = main_info_menu.addstr(5, 2, f"Status: {get_status_}")
-                # Вывод указанной в профиле страны
-                country_out = main_info_menu.addstr(6, 2, f"Country: {get_country_}")
+                
+                nickname_out = main_info_menu.addstr(1, 2, f"Nickname: {get_nickname_}")             # Никекйм
+                url_out = main_info_menu.addstr(2, 2, f"Link: {ProfileLink}")                        # Ссылка 
+                profile_type_out = main_info_menu.addstr(3, 2, f"Profile Type: {get_profile_type_}") # Приватности профиля
+                lvl_out = main_info_menu.addstr(4, 2, f"Level: ")                                    # Уровнь аккаунта
+                status_out = main_info_menu.addstr(5, 2, f"Status: {get_status_}")                   # Статус (Online/Offline)
+                country_out = main_info_menu.addstr(6, 2, f"Country: {get_country_}")                # Указанная в профиле страна
 
-                # Отображение информации о банах
-                # Вывод информации о vac бане
-                vac_ban_out = main_info_menu.addstr(7, 2, f"VAC-Ban: {get_vac_ban_}")
-                # Вывод информации о community бне
-                community_ban_out = main_info_menu.addstr(8, 2, f"Community-Ban: {get_community_ban_}")
-                # Вывод информации о trade бане
-                trade_ban_out = main_info_menu.addstr(9, 2, f"Trade-Ban: {get_trade_ban_}")
+                vac_ban_out = main_info_menu.addstr(7, 2, f"VAC-Ban: {get_vac_ban_}")                   # Vac бан
+                community_ban_out = main_info_menu.addstr(8, 2, f"Community-Ban: {get_community_ban_}") # Community бан
+                trade_ban_out = main_info_menu.addstr(9, 2, f"Trade-Ban: {get_trade_ban_}")             # Trade бан
 
+                awards_received_out = main_info_menu.addstr(12, 2, f"Awards Received: {get_awards_received}") # Полученные награды
+                awards_given_out = main_info_menu.addstr(13, 2, f"Awards Given: {get_awards_given}")          # Выданные награды
 
-                # Вывод полученных наград
-                awards_received_out = main_info_menu.addstr(12, 2, f"Awards Received: {get_awards_received}")
-                # Вывод выданных наград
-                awards_given_out = main_info_menu.addstr(13, 2, f"Awards Given: {get_awards_given}")
-
-                #Вывод информации о друзьях
-                friends_count_out = main_info_menu.addstr(16, 2, f"Friends Count: ")
+                friends_count_out = main_info_menu.addstr(16, 2, f"Friends Count: ")                          # Количество друзей
                 
             except Exception as e:
                 print(f"Error: {e}")
