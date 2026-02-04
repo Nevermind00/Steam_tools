@@ -1,0 +1,134 @@
+2026-01-30 09:10:19.387 | INFO     | __main__:main_menu:108 - Running profile menu
+2026-01-30 09:10:32.988 | INFO     | __main__:main_menu:108 - Running profile menu
+2026-01-30 09:10:59.728 | INFO     | __main__:main_menu:109 - Running profile menu
+2026-01-30 09:16:33.809 | INFO     | utils.storeInformations.wishlistFindGame:__init__:13 - WishlistFindGame Running!
+2026-01-30 09:18:44.084 | INFO     | utils.storeInformations.wishlistFindGame:__init__:13 - WishlistFindGame Running!
+2026-01-30 09:19:16.398 | INFO     | utils.storeInformations.wishlistFindGame:__init__:13 - WishlistFindGame Running!
+2026-01-30 09:25:07.468 | INFO     | __main__:main_menu:122 - Running Market Menu
+2026-01-30 09:25:11.261 | INFO     | __main__:main_menu:128 - Running Settings Menu
+2026-01-30 09:25:16.544 | INFO     | __main__:main_menu:110 - Running profile Menu
+2026-01-30 09:26:37.586 | INFO     | __main__:main_menu:111 - Running profile Menu
+2026-01-30 09:27:07.287 | INFO     | __main__:__init__:26 - SPC Running!
+2026-01-30 09:30:32.992 | INFO     | __main__:__init__:26 - SPC Running!
+2026-01-30 09:30:34.622 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-01-30 15:46:32.072 | INFO     | __main__:__init__:26 - SPC Running!
+2026-01-30 15:46:33.247 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-01-30 15:49:57.708 | INFO     | __main__:__init__:26 - SPC Running!
+2026-01-30 15:49:58.386 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-01-30 15:50:00.203 | INFO     | __main__:__init__:26 - SPC Running!
+2026-01-30 15:50:00.974 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-01-30 15:50:17.632 | INFO     | __main__:__init__:26 - SPC Running!
+2026-01-30 15:50:18.969 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-01-30 21:24:23.545 | INFO     | __main__:__init__:26 - SPC Running!
+2026-01-30 21:24:24.699 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-01-30 21:24:48.941 | INFO     | __main__:__init__:26 - SPC Running!
+2026-01-30 21:24:49.891 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-01-30 21:25:48.437 | INFO     | __main__:__init__:26 - SPC Running!
+2026-01-30 21:25:49.433 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-01-30 21:26:53.453 | INFO     | __main__:__init__:26 - SPC Running!
+2026-01-30 21:26:54.547 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-01-31 00:30:58.790 | INFO     | __main__:__init__:25 - SPC Running!
+2026-01-31 00:31:00.243 | INFO     | __main__:main_menu:129 - Running Settings Menu
+2026-01-31 00:33:15.373 | INFO     | __main__:__init__:25 - SPC Running!
+2026-01-31 00:35:07.872 | INFO     | __main__:__init__:26 - SPC Running!
+2026-01-31 00:35:09.021 | INFO     | __main__:main_menu:130 - Running Settings Menu
+2026-01-31 00:38:50.391 | INFO     | __main__:__init__:26 - SPC Running!
+2026-01-31 00:38:51.407 | INFO     | __main__:main_menu:130 - Running Settings Menu
+2026-02-02 09:08:02.202 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:08:04.374 | INFO     | __main__:main_menu:130 - Running Settings Menu
+2026-02-02 09:17:29.392 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:17:30.810 | INFO     | __main__:main_menu:130 - Running Settings Menu
+2026-02-02 09:19:26.166 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:19:27.566 | INFO     | __main__:main_menu:130 - Running Settings Menu
+2026-02-02 09:20:47.017 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:20:48.018 | INFO     | __main__:main_menu:124 - Running Market Menu
+2026-02-02 09:20:49.446 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:20:50.409 | INFO     | __main__:main_menu:130 - Running Settings Menu
+2026-02-02 09:22:07.067 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:22:07.972 | INFO     | __main__:main_menu:130 - Running Settings Menu
+2026-02-02 09:22:14.558 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:22:15.505 | INFO     | __main__:main_menu:130 - Running Settings Menu
+2026-02-02 09:23:00.379 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:23:01.709 | INFO     | __main__:main_menu:130 - Running Settings Menu
+2026-02-02 09:23:17.290 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:23:20.495 | INFO     | __main__:main_menu:130 - Running Settings Menu
+2026-02-02 09:24:08.928 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:24:09.665 | INFO     | __main__:main_menu:130 - Running Settings Menu
+2026-02-02 09:29:31.465 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:29:42.217 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-02 09:29:46.585 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:29:47.340 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-02 09:30:40.696 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:30:41.140 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-02 09:30:45.237 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:30:46.065 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-02 09:30:51.729 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:30:52.365 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-02 09:31:27.473 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:31:28.098 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-02 09:31:34.484 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:31:34.917 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-02 09:31:38.889 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:31:39.292 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-02 09:32:36.871 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:32:37.348 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-02 09:32:48.444 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:32:48.917 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-02 09:33:52.665 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:33:53.258 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-02 09:36:16.578 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 09:36:17.099 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-02 11:03:57.895 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 11:04:01.513 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 11:04:03.418 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 11:04:20.288 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-02 11:04:39.900 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 11:04:40.919 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-02 11:09:44.234 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 11:09:45.438 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-02 11:10:17.280 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 11:10:19.223 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-02 11:12:07.495 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 11:12:09.489 | INFO     | __main__:main_menu:124 - Running Market Menu
+2026-02-02 11:12:16.306 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 11:12:17.050 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-02 11:52:35.145 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 11:52:36.612 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-02 11:59:41.768 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 11:59:43.810 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-02 13:26:48.558 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-02 14:57:59.722 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 11:14:29.820 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 11:14:30.480 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-03 14:16:43.979 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 14:16:45.654 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-03 14:17:20.497 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 14:17:21.302 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-03 14:17:27.559 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 14:17:29.517 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-03 14:17:48.305 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 14:17:50.610 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-03 14:18:28.809 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 14:18:30.330 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-03 14:19:05.492 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 14:19:06.525 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-03 23:00:27.203 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 23:00:28.260 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-03 23:00:39.918 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 23:00:40.866 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-03 23:02:09.575 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 23:02:10.487 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-03 23:03:36.139 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 23:03:36.706 | INFO     | __main__:main_menu:112 - Running profile Menu
+2026-02-03 23:03:38.266 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 23:03:38.988 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-03 23:04:47.176 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 23:04:47.810 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-03 23:05:07.402 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 23:05:08.429 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-03 23:09:52.393 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-03 23:09:52.872 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-04 09:34:49.574 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-04 09:34:50.860 | INFO     | __main__:main_menu:118 - Running Wishlist Menu
+2026-02-04 09:35:13.835 | INFO     | __main__:__init__:26 - SPC Running!
+2026-02-04 09:35:14.799 | INFO     | __main__:main_menu:118 - Running Wishlist Menu

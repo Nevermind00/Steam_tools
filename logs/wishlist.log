@@ -1,0 +1,227 @@
+2026-02-04 09:34:51.457 | INFO     | utils.storeInformations.wishlistFindGame:__init__:21 - WishlistFindGame Running!
+2026-02-04 09:34:51.854 | SUCCESS  | utils.storeInformations.wishlistFindGame:FindMenu:216 - AppName - 1
+2026-02-04 09:34:52.595 | ERROR    | utils.storeInformations.wishlistFindGame:find_game_info:60 - ERROR(find_game_info): 'GameInfo' object has no attribute 'cursor'
+Traceback (most recent call last):
+
+  File "/Users/mkws/tools/Steam_tools/spc.py", line 144, in <module>
+    run = SPC()
+          └ <class '__main__.SPC'>
+
+  File "/Users/mkws/tools/Steam_tools/spc.py", line 28, in __init__
+    curses.wrapper(self.main_menu)
+    │      │       │    └ <_curses.window object at 0x10777d9c0>
+    │      │       └ <__main__.SPC object at 0x107754ad0>
+    │      └ <function wrapper at 0x106016c40>
+    └ <module 'curses' from '/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/cur...
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/curses/__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+           │    │        │       └ {}
+           │    │        └ ()
+           │    └ <_curses.window object at 0x10777d800>
+           └ <bound method SPC.main_menu of <__main__.SPC object at 0x107754ad0>>
+
+  File "/Users/mkws/tools/Steam_tools/spc.py", line 119, in main_menu
+    self.wmenu = WishlistMenu()
+    │            └ <class 'utils.storeInformations.menu.WishlistMenu'>
+    └ <__main__.SPC object at 0x107754ad0>
+
+  File "/Users/mkws/tools/Steam_tools/utils/storeInformations/menu.py", line 9, in __init__
+    curses.wrapper(self.Whishlist_menu)
+    │      │       │    └ <function WishlistMenu.Whishlist_menu at 0x10776c930>
+    │      │       └ <utils.storeInformations.menu.WishlistMenu object at 0x10678ea50>
+    │      └ <function wrapper at 0x106016c40>
+    └ <module 'curses' from '/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/cur...
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/curses/__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+           │    │        │       └ {}
+           │    │        └ ()
+           │    └ <_curses.window object at 0x10777da00>
+           └ <bound method WishlistMenu.Whishlist_menu of <utils.storeInformations.menu.WishlistMenu object at 0x10678ea50>>
+
+  File "/Users/mkws/tools/Steam_tools/utils/storeInformations/menu.py", line 81, in Whishlist_menu
+    self.findGame = GameInfo()
+    │               └ <class 'utils.storeInformations.wishlistFindGame.GameInfo'>
+    └ <utils.storeInformations.menu.WishlistMenu object at 0x10678ea50>
+
+  File "/Users/mkws/tools/Steam_tools/utils/storeInformations/wishlistFindGame.py", line 22, in __init__
+    find = curses.wrapper(self.FindMenu) # Запуск меню
+           │      │       │    └ <function GameInfo.FindMenu at 0x10776c880>
+           │      │       └ <utils.storeInformations.wishlistFindGame.GameInfo object at 0x10678e3c0>
+           │      └ <function wrapper at 0x106016c40>
+           └ <module 'curses' from '/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/cur...
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/curses/__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+           │    │        │       └ {}
+           │    │        └ ()
+           │    └ <_curses.window object at 0x10777dc00>
+           └ <bound method GameInfo.FindMenu of <utils.storeInformations.wishlistFindGame.GameInfo object at 0x10678e3c0>>
+
+  File "/Users/mkws/tools/Steam_tools/utils/storeInformations/wishlistFindGame.py", line 223, in FindMenu
+    find_game = asyncio.run(self.find_game_info(appid=730)) # Получение
+                │       │   │    └ <function GameInfo.find_game_info at 0x10774fcc0>
+                │       │   └ <utils.storeInformations.wishlistFindGame.GameInfo object at 0x10678e3c0>
+                │       └ <function run at 0x1066f4670>
+                └ <module 'asyncio' from '/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/as...
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py", line 204, in run
+    return runner.run(main)
+           │      │   └ <coroutine object GameInfo.find_game_info at 0x107705360>
+           │      └ <function Runner.run at 0x1066f4a90>
+           └ <asyncio.runners.Runner object at 0x10678e510>
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<GameInfo.find_game_info() running at /Users/mkws/tools/Steam_tools/utils/storeInformations/...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x1066dceb0>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x10678e510>
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x1066dce00>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 677, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x1066def00>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 2046, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x10639acf0>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x10738c7c0>()>
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <_asyncio.TaskStepMethWrapper object at 0x10738c7c0>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <_asyncio.TaskStepMethWrapper object at 0x10738c7c0>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x10738c7c0>()>
+
+> File "/Users/mkws/tools/Steam_tools/utils/storeInformations/wishlistFindGame.py", line 52, in find_game_info
+    await Wishlist.AddGame(self,
+          │        │       └ <utils.storeInformations.wishlistFindGame.GameInfo object at 0x10678e3c0>
+          │        └ <function Wishlist.AddGame at 0x10776c250>
+          └ <class 'utils.storeInformations.wishlist_.Wishlist'>
+
+  File "/Users/mkws/tools/Steam_tools/utils/storeInformations/wishlist_.py", line 41, in AddGame
+    self.cursor.execute("INSERT INTO wishlists (game_name, game_type, app_id, price, discount_price) VALUES (?, ?, ?, ?, ?)",
+    └ <utils.storeInformations.wishlistFindGame.GameInfo object at 0x10678e3c0>
+
+AttributeError: 'GameInfo' object has no attribute 'cursor'
+2026-02-04 09:35:15.203 | INFO     | utils.storeInformations.wishlistFindGame:__init__:21 - WishlistFindGame Running!
+2026-02-04 09:35:15.707 | SUCCESS  | utils.storeInformations.wishlistFindGame:FindMenu:216 - AppName - 1
+2026-02-04 09:35:16.293 | ERROR    | utils.storeInformations.wishlistFindGame:find_game_info:60 - ERROR(find_game_info): Wishlist.AddGame() missing 1 required positional argument: 'self'
+Traceback (most recent call last):
+
+  File "/Users/mkws/tools/Steam_tools/spc.py", line 144, in <module>
+    run = SPC()
+          └ <class '__main__.SPC'>
+
+  File "/Users/mkws/tools/Steam_tools/spc.py", line 28, in __init__
+    curses.wrapper(self.main_menu)
+    │      │       │    └ <_curses.window object at 0x108925c80>
+    │      │       └ <__main__.SPC object at 0x10955cad0>
+    │      └ <function wrapper at 0x107f16c40>
+    └ <module 'curses' from '/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/cur...
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/curses/__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+           │    │        │       └ {}
+           │    │        └ ()
+           │    └ <_curses.window object at 0x109570d80>
+           └ <bound method SPC.main_menu of <__main__.SPC object at 0x10955cad0>>
+
+  File "/Users/mkws/tools/Steam_tools/spc.py", line 119, in main_menu
+    self.wmenu = WishlistMenu()
+    │            └ <class 'utils.storeInformations.menu.WishlistMenu'>
+    └ <__main__.SPC object at 0x10955cad0>
+
+  File "/Users/mkws/tools/Steam_tools/utils/storeInformations/menu.py", line 9, in __init__
+    curses.wrapper(self.Whishlist_menu)
+    │      │       │    └ <function WishlistMenu.Whishlist_menu at 0x10957ca90>
+    │      │       └ <utils.storeInformations.menu.WishlistMenu object at 0x10859aa50>
+    │      └ <function wrapper at 0x107f16c40>
+    └ <module 'curses' from '/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/cur...
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/curses/__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+           │    │        │       └ {}
+           │    │        └ ()
+           │    └ <_curses.window object at 0x109570c00>
+           └ <bound method WishlistMenu.Whishlist_menu of <utils.storeInformations.menu.WishlistMenu object at 0x10859aa50>>
+
+  File "/Users/mkws/tools/Steam_tools/utils/storeInformations/menu.py", line 81, in Whishlist_menu
+    self.findGame = GameInfo()
+    │               └ <class 'utils.storeInformations.wishlistFindGame.GameInfo'>
+    └ <utils.storeInformations.menu.WishlistMenu object at 0x10859aa50>
+
+  File "/Users/mkws/tools/Steam_tools/utils/storeInformations/wishlistFindGame.py", line 22, in __init__
+    find = curses.wrapper(self.FindMenu) # Запуск меню
+           │      │       │    └ <function GameInfo.FindMenu at 0x10957c9e0>
+           │      │       └ <utils.storeInformations.wishlistFindGame.GameInfo object at 0x10859a3c0>
+           │      └ <function wrapper at 0x107f16c40>
+           └ <module 'curses' from '/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/cur...
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/curses/__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+           │    │        │       └ {}
+           │    │        └ ()
+           │    └ <_curses.window object at 0x1080aacc0>
+           └ <bound method GameInfo.FindMenu of <utils.storeInformations.wishlistFindGame.GameInfo object at 0x10859a3c0>>
+
+  File "/Users/mkws/tools/Steam_tools/utils/storeInformations/wishlistFindGame.py", line 223, in FindMenu
+    find_game = asyncio.run(self.find_game_info(appid=730)) # Получение
+                │       │   │    └ <function GameInfo.find_game_info at 0x10955be20>
+                │       │   └ <utils.storeInformations.wishlistFindGame.GameInfo object at 0x10859a3c0>
+                │       └ <function run at 0x108500670>
+                └ <module 'asyncio' from '/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/as...
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py", line 204, in run
+    return runner.run(main)
+           │      │   └ <coroutine object GameInfo.find_game_info at 0x109511360>
+           │      └ <function Runner.run at 0x108500a90>
+           └ <asyncio.runners.Runner object at 0x10859a510>
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<GameInfo.find_game_info() running at /Users/mkws/tools/Steam_tools/utils/storeInformations/...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x1084e8eb0>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x10859a510>
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x1084e8e00>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 677, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x1084eaf00>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 2046, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x10825acf0>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x10931f2b0>()>
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <_asyncio.TaskStepMethWrapper object at 0x10931f2b0>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <_asyncio.TaskStepMethWrapper object at 0x10931f2b0>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x10931f2b0>()>
+
+> File "/Users/mkws/tools/Steam_tools/utils/storeInformations/wishlistFindGame.py", line 52, in find_game_info
+    await Wishlist.AddGame(
+          │        └ <function Wishlist.AddGame at 0x10957c3b0>
+          └ <class 'utils.storeInformations.wishlist_.Wishlist'>
+
+TypeError: Wishlist.AddGame() missing 1 required positional argument: 'self'

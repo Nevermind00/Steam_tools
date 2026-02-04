@@ -1,6 +1,6 @@
 import curses
 import curses.panel
-import json
+from loguru import logger
 
 from .profile_ import Profile__
 from .awards_ import Profile_Awards
@@ -26,7 +26,7 @@ class ProfileMenu:
         start_y = max(0, (height - win_height) // 2)
         
         # Создание окна для ввода
-        profile_menu = curses.newwin(win_height, win_width+19, start_y, start_x)
+        profile_menu = curses.newwin(win_height-5, win_width+19, start_y, start_x)
         profile_menu.keypad(True)
         
         # Отрисовка окна
@@ -39,7 +39,7 @@ class ProfileMenu:
         # Ввод данных
         curses.echo()
         try:
-            profile_input = profile_menu.getstr(4, x + len(prompt), length).decode('utf-8')
+            profile_input = profile_menu.getstr(3, x + len(prompt), length).decode('utf-8')
         except curses.error:
             profile_input = ""
         finally:
@@ -54,11 +54,18 @@ class ProfileMenu:
 
 #Функция вывода поля для ввода ссылки
     def ProfileInput(self, stdscr):
-        return self.Profile_menu(stdscr, 4, 2, "Link: ", 60)
+        # 2 parameter - Y input field
+        # 3 parameter - X input field
+        # 4 parameter - Left text before URL
+        # 5 parameter - Number of characters
+        return self.Profile_menu(stdscr, 3, 2, "Link: ", 59)
 
 
 #Функция вывода информации о профиле
     def MainInfoMenu(self, stdscr):
+        logger.remove()
+        logger.add("logs/profile.log", rotation="500 MB")
+
         curses.curs_set(0)
         stdscr.clear()
         
@@ -79,6 +86,7 @@ class ProfileMenu:
             
             # Получение ссылки на профиль
             ProfileLink = self.ProfileInput(stdscr)
+            logger.info(f"Profile URL: {ProfileLink}")
             
             if not ProfileLink:
                 continue
@@ -110,7 +118,7 @@ class ProfileMenu:
             
             # FRIENDS INFORMATION 
 
-            
+# TODO
                 """ 13.01.26
                 сделать цикличный пеернос строки, если добавится новый элемент, чтобы не пришлось все координаты переприсывать в ручную.
                 """
@@ -133,16 +141,11 @@ class ProfileMenu:
                 friends_count_out = main_info_menu.addstr(16, 2, f"Friends Count: ")                          # Количество друзей
                 
             except Exception as e:
-                print(f"Error: {e}")
-                # main_info_menu.addstr(5, 2, "Press any key to try again...")
+                logger.exception(f"Error: {e}")
             
             main_info_menu.refresh()
 
             # main_info_menu.addstr(height, 2, "↑↓: Choice | Enter: Select | F8: Main Menu | F10: Exit")
-
-            # with open("data/settings.json", "r") as keys:
-            #     bind = json.load(keys)
-
             
             # Ожидание нажатия клавиши
             key = main_info_menu.getch()

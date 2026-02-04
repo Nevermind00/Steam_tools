@@ -1,4 +1,10 @@
-from simple_term_menu import TreminalMenu 
+import curses
+import curses.panel
 
-menu = TreminalMenu(["yes", "no"])
-menu.show()
+class Menu:
+    def __init__(self):
+        ...
+    
+    def main_menu(self, stdscr):
+        curses.curs_set(0) # off cursor
+        

@@ -1,0 +1,181 @@
+2026-01-30 09:30:55.421 | INFO     | utils.profileInformations.menu_:MainInfoMenu:85 - Profile URL: https://steamcommunity.com/id/--mkws656--/
+2026-02-02 09:33:12.795 | INFO     | utils.profileInformations.menu_:MainInfoMenu:85 - Profile URL: --mkws--
+2026-02-02 09:33:12.800 | ERROR    | utils.profileInformations.menu_:MainInfoMenu:140 - Error: Invalid URL '--mkws--': No scheme supplied. Perhaps you meant https://--mkws--?
+Traceback (most recent call last):
+
+  File "/Users/mkws/tools/Steam_tools/spc.py", line 144, in <module>
+    run = SPC()
+          └ <class '__main__.SPC'>
+
+  File "/Users/mkws/tools/Steam_tools/spc.py", line 28, in __init__
+    curses.wrapper(self.main_menu)
+    │      │       │    └ <_curses.window object at 0x109c4d280>
+    │      │       └ <__main__.SPC object at 0x10afd86e0>
+    │      └ <function wrapper at 0x109816c40>
+    └ <module 'curses' from '/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/cur...
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/curses/__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+           │    │        │       └ {}
+           │    │        └ ()
+           │    └ <_curses.window object at 0x10afe7dc0>
+           └ <bound method SPC.main_menu of <__main__.SPC object at 0x10afd86e0>>
+
+  File "/Users/mkws/tools/Steam_tools/spc.py", line 113, in main_menu
+    self.ProfileMenu = ProfileMenu()
+    │                  └ <class 'utils.profileInformations.menu_.ProfileMenu'>
+    └ <__main__.SPC object at 0x10afd86e0>
+
+  File "/Users/mkws/tools/Steam_tools/utils/profileInformations/menu_.py", line 13, in __init__
+    main_menu = curses.wrapper(self.MainInfoMenu)
+                │      │       │    └ <function ProfileMenu.MainInfoMenu at 0x10afd78a0>
+                │      │       └ <utils.profileInformations.menu_.ProfileMenu object at 0x10a016a50>
+                │      └ <function wrapper at 0x109816c40>
+                └ <module 'curses' from '/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/cur...
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/curses/__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+           │    │        │       └ {}
+           │    │        └ ()
+           │    └ <_curses.window object at 0x10afe7c40>
+           └ <bound method ProfileMenu.MainInfoMenu of <utils.profileInformations.menu_.ProfileMenu object at 0x10a016a50>>
+
+> File "/Users/mkws/tools/Steam_tools/utils/profileInformations/menu_.py", line 96, in MainInfoMenu
+    profile_info.Profile(ProfileLink)                   #main page
+    │            │       └ '--mkws--'
+    │            └ <function Profile__.Profile at 0x10ae88720>
+    └ <utils.profileInformations.profile_.Profile__ object at 0x10a0163c0>
+
+  File "/Users/mkws/tools/Steam_tools/utils/profileInformations/profile_.py", line 19, in Profile
+    self.responce_profile    = requests.get(self.steam_profile_url)
+    │    │                     │        │   │    └ '--mkws--'
+    │    │                     │        │   └ <utils.profileInformations.profile_.Profile__ object at 0x10a0163c0>
+    │    │                     │        └ <function get at 0x10af82ae0>
+    │    │                     └ <module 'requests' from '/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/__init__.py'>
+    │    └ None
+    └ <utils.profileInformations.profile_.Profile__ object at 0x10a0163c0>
+
+  File "/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           │              │           │         └ {}
+           │              │           └ None
+           │              └ '--mkws--'
+           └ <function request at 0x10af04720>
+  File "/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           │       │              │           │      └ {'params': None}
+           │       │              │           └ '--mkws--'
+           │       │              └ 'get'
+           │       └ <function Session.request at 0x10afc49e0>
+           └ <requests.sessions.Session object at 0x10a016660>
+  File "/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           │    │               └ <Request [GET]>
+           │    └ <function Session.prepare_request at 0x10afc4930>
+           └ <requests.sessions.Session object at 0x10a016660>
+  File "/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/sessions.py", line 484, in prepare_request
+    p.prepare(
+    │ └ <function PreparedRequest.prepare at 0x10afadc70>
+    └ <PreparedRequest [GET]>
+  File "/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/models.py", line 367, in prepare
+    self.prepare_url(url, params)
+    │    │           │    └ OrderedDict()
+    │    │           └ '--mkws--'
+    │    └ <function PreparedRequest.prepare_url at 0x10afadfe0>
+    └ <PreparedRequest [GET]>
+  File "/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/models.py", line 438, in prepare_url
+    raise MissingSchema(
+          └ <class 'requests.exceptions.MissingSchema'>
+
+requests.exceptions.MissingSchema: Invalid URL '--mkws--': No scheme supplied. Perhaps you meant https://--mkws--?
+2026-02-02 09:36:03.086 | INFO     | utils.profileInformations.menu_:MainInfoMenu:85 - Profile URL: ывавыфв
+2026-02-02 09:36:03.101 | ERROR    | utils.profileInformations.menu_:MainInfoMenu:140 - Error: Invalid URL 'ывавыфв': No scheme supplied. Perhaps you meant https://ывавыфв?
+Traceback (most recent call last):
+
+  File "/Users/mkws/tools/Steam_tools/spc.py", line 144, in <module>
+    run = SPC()
+          └ <class '__main__.SPC'>
+
+  File "/Users/mkws/tools/Steam_tools/spc.py", line 28, in __init__
+    curses.wrapper(self.main_menu)
+    │      │       │    └ <_curses.window object at 0x1072ed3c0>
+    │      │       └ <__main__.SPC object at 0x1089dc830>
+    │      └ <function wrapper at 0x10727ec40>
+    └ <module 'curses' from '/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/cur...
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/curses/__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+           │    │        │       └ {}
+           │    │        └ ()
+           │    └ <_curses.window object at 0x108a01500>
+           └ <bound method SPC.main_menu of <__main__.SPC object at 0x1089dc830>>
+
+  File "/Users/mkws/tools/Steam_tools/spc.py", line 113, in main_menu
+    self.ProfileMenu = ProfileMenu()
+    │                  └ <class 'utils.profileInformations.menu_.ProfileMenu'>
+    └ <__main__.SPC object at 0x1089dc830>
+
+  File "/Users/mkws/tools/Steam_tools/utils/profileInformations/menu_.py", line 13, in __init__
+    main_menu = curses.wrapper(self.MainInfoMenu)
+                │      │       │    └ <function ProfileMenu.MainInfoMenu at 0x1089d77f0>
+                │      │       └ <utils.profileInformations.menu_.ProfileMenu object at 0x107a16a50>
+                │      └ <function wrapper at 0x10727ec40>
+                └ <module 'curses' from '/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/cur...
+
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/curses/__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+           │    │        │       └ {}
+           │    │        └ ()
+           │    └ <_curses.window object at 0x10734e2c0>
+           └ <bound method ProfileMenu.MainInfoMenu of <utils.profileInformations.menu_.ProfileMenu object at 0x107a16a50>>
+
+> File "/Users/mkws/tools/Steam_tools/utils/profileInformations/menu_.py", line 96, in MainInfoMenu
+    profile_info.Profile(ProfileLink)                   #main page
+    │            │       └ 'ывавыфв'
+    │            └ <function Profile__.Profile at 0x108888720>
+    └ <utils.profileInformations.profile_.Profile__ object at 0x107a163c0>
+
+  File "/Users/mkws/tools/Steam_tools/utils/profileInformations/profile_.py", line 19, in Profile
+    self.responce_profile    = requests.get(self.steam_profile_url)
+    │    │                     │        │   │    └ 'ывавыфв'
+    │    │                     │        │   └ <utils.profileInformations.profile_.Profile__ object at 0x107a163c0>
+    │    │                     │        └ <function get at 0x108982ae0>
+    │    │                     └ <module 'requests' from '/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/__init__.py'>
+    │    └ None
+    └ <utils.profileInformations.profile_.Profile__ object at 0x107a163c0>
+
+  File "/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           │              │           │         └ {}
+           │              │           └ None
+           │              └ 'ывавыфв'
+           └ <function request at 0x108904720>
+  File "/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           │       │              │           │      └ {'params': None}
+           │       │              │           └ 'ывавыфв'
+           │       │              └ 'get'
+           │       └ <function Session.request at 0x1089c49e0>
+           └ <requests.sessions.Session object at 0x107a16660>
+  File "/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           │    │               └ <Request [GET]>
+           │    └ <function Session.prepare_request at 0x1089c4930>
+           └ <requests.sessions.Session object at 0x107a16660>
+  File "/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/sessions.py", line 484, in prepare_request
+    p.prepare(
+    │ └ <function PreparedRequest.prepare at 0x1089adc70>
+    └ <PreparedRequest [GET]>
+  File "/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/models.py", line 367, in prepare
+    self.prepare_url(url, params)
+    │    │           │    └ OrderedDict()
+    │    │           └ 'ывавыфв'
+    │    └ <function PreparedRequest.prepare_url at 0x1089adfe0>
+    └ <PreparedRequest [GET]>
+  File "/Users/mkws/tools/Steam_tools/venv/lib/python3.14/site-packages/requests/models.py", line 438, in prepare_url
+    raise MissingSchema(
+          └ <class 'requests.exceptions.MissingSchema'>
+
+requests.exceptions.MissingSchema: Invalid URL 'ывавыфв': No scheme supplied. Perhaps you meant https://ывавыфв?
+2026-02-02 11:04:30.846 | INFO     | utils.profileInformations.menu_:MainInfoMenu:89 - Profile URL: https://steamcommunity.com/id/--mkws656--/
+2026-02-02 11:09:48.432 | INFO     | utils.profileInformations.menu_:MainInfoMenu:89 - Profile URL: https://steamcommunity.com/id/--mkws656--/

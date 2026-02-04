@@ -1,36 +1,53 @@
 import sqlite3 
+from loguru import logger
 
-class Wishlist:
-    def __init__(self):
-        ...
+# class Wishlist:
+#     def __init__(self):
+#         self.wishlist_db = None
+#         self.cursor = None
+#         self.wishlist_database()  # Автоинициализация БД
     
-    def wishilst_database(self):
+def init_wishlist_db():
         # Создание базы данных
-        self.wishlist_db = sqlite3.connect("wishlist.db")
+    global wishlist_db
+    wishlist_db = sqlite3.connect("wishlist.db")
 
-
-        global cursor
-        cursor = self.wishlist_db.cursor()
+        
+    # cursor = wishlist_db.cursor()
 
         # Создание таблицы wishlist 
-        cursor.execute("""
+    wishlist_db.cursor.execute("""
         CREATE TABLE IF NOT EXISTS wishlist(
-                    appID integer NOT NULL,
-                    name text NOT NULL,
-                    type text NOT NULL,
-                    price integer NOT NULL             
+                       id INTEGER PRIMARY KEY,
+                       game_name TEXT NOT NULL,
+                       game_type TEXT NOT NULL,
+                       app_id BIGINT NOT NULL,
+                       price INTEGER NOT NULL,
+                       discount_price INT NULL
         )""")
 
-        self.wishlist_db.commit()
-        # self.wishlist_db.close()
-    
+    wishlist_db.commit()
 
     #функции добавления и удаления игры из бд
-    def AddGame(self, game_name: str, game_type: str, app_id: int, price: int, discount_price: int = None):
-        cursor.execute("INSERT INTO wishlists (game_name, game_type, app_id, price, discount_price) VALUES (?, ?, ?, ?, ?)",
-        (game_name, game_type, app_id, price, discount_price if discount_price else "")
-        )
-        self.wishlist_db.commit()
+def AddGame(
+                game_name: str, 
+                game_type: str, 
+                app_id: int, 
+                price: int, 
+                discount_price: int = None):
+    logger.remove()
+    logger.add("logs/wishlist.log", rotation="500 MB")
+
+    try:
+        wishlist_db.cursor.execute("INSERT INTO wishlists (game_name, game_type, app_id, price, discount_price) VALUES (?, ?, ?, ?, ?)",
+            (game_name, game_type, app_id, price, discount_price if discount_price else "")
+            )
+        wishlist_db.commit()
+
+        logger.success(f"Game: {game_name}({app_id}) has been added to the wishlist ✅")
+    except sqlite3.Error as e:
+        wishlist_db.rollback()
+
 
 
         
@@ -38,4 +55,4 @@ class Wishlist:
         ...
 
 if __name__ == "__main__":
-    run = Wishlist()
+    ...

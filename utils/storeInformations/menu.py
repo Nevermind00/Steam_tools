@@ -1,5 +1,6 @@
 import curses
 import curses.panel
+from loguru import logger
 
 from .wishlistFindGame import GameInfo
 
@@ -141,6 +142,8 @@ class WishlistMenu:
         return self.find_game_information(stdscr, 4, 2, "Game:", 60)
 
     def FindGameMenu(self, stdscr):
+        logger.remove()
+        logger.add("logs/wishlist.log", rotation="500 MB")
         curses.curs_set(0)
         stdscr.clear()
 
@@ -160,6 +163,7 @@ class WishlistMenu:
             GameName = self.FindGameInput(stdscr)
 
             if not GameName:
+                logger.warning("Game not found!")
                 continue
             try:
                 game_info = GameInfo()
@@ -169,7 +173,8 @@ class WishlistMenu:
 
                 
             except Exception as e:
-                print(f"Error: {e}")
+                # print(f"Error: {e}")
+                logger.exception(f"ERROR: {e}")
                 
             find_game_menu.refresh()
 
@@ -177,8 +182,6 @@ class WishlistMenu:
 
             if key == curses.KEY_F10:
                 quit()
-    
-
 
 if __name__ == "__main__":
     WishlistMenu()

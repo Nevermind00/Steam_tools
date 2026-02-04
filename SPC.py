@@ -1,5 +1,6 @@
 #SPC.py
 
+# TODO
 """
 Точка входа в программу. Тут осуществляется: 
 * Главное меню
@@ -11,19 +12,18 @@
 
 import curses
 import curses.panel
-
+from loguru import logger
 from utils.profileInformations import *
 from utils.profileInformations import profile_
 from utils.profileInformations.menu_ import ProfileMenu
-
 from utils.storeInformations.menu import WishlistMenu
-
-
-
+from utils.Settings.settingsMenu import SettingsMenu
 
 class SPC():
     def __init__(self):
-        
+        logger.remove()
+        logger.add("./logs/spc.log", rotation="500 MB")
+        logger.info("SPC Running!")
         #Запуск главного меню
         curses.wrapper(self.main_menu)
 
@@ -42,7 +42,6 @@ class SPC():
         "Market",
         "Settings", 
         "Exit"]
-
 
         current_item = 0
 
@@ -101,44 +100,45 @@ class SPC():
                 quit()
 
     def main_menu(self, stdscr):
+        logger.remove()
+        logger.add("./logs/spc.log", rotation="500 MB")
         #отключить курсор
         curses.curs_set(0)
-        self.choice = self.menu(stdscr)
+        self.select = self.menu(stdscr)
         
         #Если выбран пункт Profile Information, то запускать меню информации о профиле
-        if self.choice == 0:
+        if self.select == 0:
             stdscr.clear()
+            logger.info("Running profile Menu")
             self.ProfileMenu = ProfileMenu()
         
         #Если выбран пункт Store Information, то запускать меню информации о профиле
-        if self.choice == 1:
+        if self.select == 1:
             stdscr.clear()
-            # stdscr.addstr(10, 10, "Store Information")
+            logger.info("Running Wishlist Menu")
             self.wmenu = WishlistMenu()
 
-        #Если выбрать пункт Market Information, то запускать меню информации о маркете
-        if self.choice == 2:
+        #Если выбрать пункт Market Information, то запускать меню информации о торговой площадке
+        if self.select == 2:
             stdscr.clear()
+            logger.info("Running Market Menu")
             stdscr.addstr(10, 10, "Market Information")
 
         #Если выбран пункт Settings, то запускать меню настроек программы
-        if self.choice == 3:
+        if self.select == 3:
             stdscr.clear()
-            stdscr.addstr(10, 10, "Settings")
+            logger.info("Running Settings Menu")
+            # stdscr.addstr(10, 10, "Settings")
+            self.smenu = SettingsMenu()
         
         #Если выбран пункт Exit, то закрывать программу
-        if self.choice == 4:
+        if self.select == 4:
             quit()
 
         #Обновить экран
         stdscr.refresh()
         #Ждать символа
         stdscr.getch()
-    
-
-    # def wishlist_store(self):
-    #      self.wishlist_menu = wishlist_.wishlist()
-
         
 if __name__ == "__main__":
     run = SPC()
